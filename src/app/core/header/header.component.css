@@ -1,0 +1,21 @@
+nav {
+  /*background-color: #8d818c;*/
+  /*background-color: #b5a3b4;*/
+  /*background-color: #b1919a;*/
+  /*background-color: #c2a9b0; ultimo lindo*/
+  /*background-color: #cdb9bf;*/
+  background-color: #eee7e3;
+}
+
+nav > a {
+  color: rgb(119, 110, 110);
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+nav > a:hover {
+  color: gray;
+}
+
+nav > div > ul > li > a {
+  color: gray;
+}

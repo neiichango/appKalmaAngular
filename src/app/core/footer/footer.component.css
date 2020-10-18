@@ -1,0 +1,15 @@
+footer{
+    height: 200px;
+    margin-top: 25%;
+
+  }
+
+  footer>div>div>div>div{
+    align-content: center;
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+
+   footer>div>div>div>div>a{
+    color: rgb(72, 59, 77);
+  }
