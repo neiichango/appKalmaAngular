@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="#">KALMA</a>
+  <div class="container">
+  <a class="navbar-brand" routerLink="/" routerLinkActive="active">KALMA</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -38,7 +39,7 @@
       </li>
 
 <li class="nav-item active">
-  <a class="nav-link" href="#">Acerca de.. <span class="sr-only">(current)</span></a>
+  <a class="nav-link" routerLink="/home/acercade" routerLinkActive="active">Acerca de.. </a>
 </li>
 
 
@@ -57,4 +58,90 @@
 
     </form>
   </div>
+  </div>
 </nav>
+
+<div id="carouselExampleIndicators" class="carousel  slide col-sm-9  " data-ride="carousel" style="margin: 0 auto; padding-bottom: 2em; padding-top: 2em;"   >
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/assets/img/ropa3.jpg" alt="First slide"  >
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/assets/img/ropa2.jpg" alt="Second slide" >
+    </div>
+
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+
+
+
+
+<div class="row row justify-content-md-center">
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Estilo</h5>
+        <p class="card-text">Prentas únicas que reflejan tu personalidad</p>
+          <img class="d-block w-100" src="/assets/img/ropa12.jpg" alt="First slide">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Comodidad</h5>
+        <p class="card-text">Outfits perfectos para trabajar en casa</p>
+        <img class="d-block w-100" src="/assets/img/ropa6.jpg" alt="First slide">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Espiritualidad</h5>
+        <p class="card-text">Flexibilidad para tus entrenamientos</p>
+        <img class="d-block w-100" src="/assets/img/ropa7.jpg" alt="First slide">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="col-sm-9" style="margin: 0 auto;">
+<h2 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; color: #2c2130; ">Acerca de</h2>
+<p>Proyecto de programacion de Neibeth Chango Aguero</p>
+<p>Puede contactarnos al Correo: servicioalcliente@kalmacr.com </p>
+<p>Nuestro telefono es: 85714433 </p>
+<p>Puede visitarnos en nuestras oficinas ubicadas en Alajuela centro: </p>
+<!--Google map-->
+<div id="map-container-google-1" class="map-container col-sm-9" style="margin: 0 auto; align-content: center;">
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.3598451422467!2d-84.21564756209985!3d10.016960697099856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9c458871b9f%3A0x57d47c454ef76378!2sParque%20General%20Tom%C3%A1s%20Guardia!5e0!3m2!1ses-419!2scr!4v1603069823480!5m2!1ses-419!2scr"
+  width="100%" height="450" frameborder="0" style="border:0; width: 100%;" allowfullscreen="" aria-hidden="false"
+  tabindex="0"></iframe>
+
+</div>
+
+<!--Google Maps-->
+</div>

@@ -5,12 +5,13 @@ nav {
   /*background-color: #c2a9b0; ultimo lindo*/
   /*background-color: #cdb9bf;*/
   background-color: #eee7e3;
+  width: 100%;
 }
 
 nav > a {
-  color: rgb(119, 110, 110);
+  color:  rgb(119, 110, 110);
   font-weight: bold;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI";
 }
 nav > a:hover {
   color: gray;
