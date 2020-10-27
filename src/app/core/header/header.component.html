@@ -12,11 +12,11 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+          aria-haspopup="true" aria-expanded="false"  [routerLink]="['/producto']" routerLinkActive="active">
           Mantenimientos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Productos</a>
+          <a class="dropdown-item"  [routerLink]="['/producto']" routerLinkActive="active" role="button">Productos</a>
           <a class="dropdown-item" href="#">Personal</a>
           <a class="dropdown-item" href="#">Clientes</a>
         </div>
@@ -39,20 +39,20 @@
       </li>
 
 <li class="nav-item active">
-  <a class="nav-link" routerLink="/home/acercade" routerLinkActive="active">Acerca de.. </a>
+  <a class="nav-link" [routerLink]="['/home/acercade']" routerLinkActive="active">Acerca de.. </a>
 </li>
 
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
 
-      <button  class="btn btn-outline-dark my-2 my-sm-0" type="submit">
-        <a class="fa fa-user" aria-hidden="true" ></a>
+      <button  class="btn btn-outline-dark my-2 my-sm-0" [routerLink]="['usuario/login']" routerLinkActive="active" >
+        <a class="fa fa-user" aria-hidden="true"   ></a>
 
          Iniciar Sesion</button>
 
       <button hidden=true class="btn btn-outline-dark my-2 my-sm-0" type="submit">
-        <a class="fa fa-user" aria-hidden="true"></a>
+        <a class="fa fa-user" aria-hidden="true" ></a>
 
         Salir</button>
 
@@ -61,7 +61,7 @@
   </div>
 </nav>
 
-
+<!--
 <div id="carouselExampleIndicators" class="carousel  slide col-sm-9  " data-ride="carousel" style="margin: 0 auto; padding-bottom: 2em; padding-top: 2em;"   >
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -125,41 +125,4 @@
     </div>
   </div>
 </div>
-
-
-<div class="row row justify-content-md-center" style="padding-top: 4em;">
-
-<div class="col-sm-4" style="background-color: #e2e5e7; ">
-  <h2 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; color: #625f63; ">KALMA</h2>
-  <p style="color: #625f63;"> Proyecto de programación de Neibeth Chango Aguero</p>
-  <p  style="color: #625f63;">Contáctenos al Correo: servicioalcliente@kalmacr.com </p>
-  <p style="color: #625f63;">Nuestro telefono es: 85714433 </p>
-  <p style="color: #625f63;">Puede visitarnos en nuestras oficinas ubicadas en Alajuela centro: </p>
-  <!--Google map-->
-  <div id="map-container-google-1" class="map-container" style="margin: 0 auto; align-content: center;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.3598451422467!2d-84.21564756209985!3d10.016960697099856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9c458871b9f%3A0x57d47c454ef76378!2sParque%20General%20Tom%C3%A1s%20Guardia!5e0!3m2!1ses-419!2scr!4v1603069823480!5m2!1ses-419!2scr"
-      width="100%" height="360" frameborder="0" style="border:0; width: 100%;" allowfullscreen="" aria-hidden="false"
-      tabindex="0"></iframe>
-
-  </div>
-
-</div>
-
-<div class="col-sm-4">
-
-    <div class="card border-light">
-      <div class="card-body" style="padding: 0%; margin: 10;">
-
-        <img class="d-block w-100" src="/assets/img/ropa12.jpg" alt="First slide">
-      </div>
-
-
-
-  </div>
-  </div>
-
-</div>
-
-  <!--Google Maps-->
-
+-->
