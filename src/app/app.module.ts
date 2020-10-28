@@ -33,6 +33,7 @@ import { ProductoModule } from './producto/producto.module';
 
     HomeModule,
     UserModule,
+    ProductoModule,
 // al final el gestor de las rutas principal
 
      AppRoutingModule,

@@ -9,14 +9,43 @@ nav {
 }
 
 nav > a {
-  color:  rgb(119, 110, 110);
+  color: rgb(119, 110, 110);
   font-weight: bold;
   font-family: "Segoe UI";
 }
 nav > a:hover {
-  color: gray;
+  color: rgb(88, 86, 86);
 }
 
 nav > div > ul > li > a {
   color: gray;
+  background-color: #eee7e3;
 }
+
+nav > div > div> ul > li > div {
+  border: none;
+  background-color: #eee7e3;
+}
+
+.btndark2:hover{
+
+  background-color: #483b4d;
+}
+
+.TituloDark2 {
+  color: #483550;
+}
+
+.TituloDark1 {
+  color: #776e6e;
+}
+
+.LetraDark1 {
+  color: #776e6e;
+}
+
+.LetraDark2 {
+  color: #585555;
+}
+
+

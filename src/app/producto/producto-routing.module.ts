@@ -7,12 +7,12 @@ import { ProductoShowComponent } from './producto-show/producto-show.component';
 
 
 const routes: Routes = [
-  { path: 'producto', component: ProductoIndexComponent },
-  {
+{path: 'producto', component: ProductoIndexComponent},
+ {
     path: 'producto/all',
     component: ProductoAllComponent,
   },
-  { path: 'producto/:id', component: ProductoShowComponent },
+  { path: 'producto/:id', component: ProductoShowComponent }
 ];
 
 @NgModule({

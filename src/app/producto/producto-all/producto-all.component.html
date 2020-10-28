@@ -1,1 +1,45 @@
-<p>producto-all works!</p>
+<div class="row justify-content-center margen ">
+  <div class="col-md-2">
+
+  </div>
+  <div class="col-md-6">
+    <h4 class="mb-3 TituloDark2">Lista de Productos</h4>
+    <button type="button" class="btn btn-light btn-sm">
+      <i class="fas fa-plus"></i>
+    </button>
+    <table class="table table-hover"  style="margin-top: 1em">
+      <thead>
+        <tr>
+          <th scope="col" class="TituloDark1">#</th>
+          <th scope="col" class="TituloDark1">Nombre</th>
+          <th scope="col" class="TituloDark1">Imagen</th>
+          <th scope="col" class="TituloDark1">Descripcion</th>
+          <th scope="col" class="TituloDark1">Categoria</th>
+          <th scope="col" class="TituloDark1">Precio</th>
+
+          <th scope="col" class="TituloDark1">Acciones</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of datos">
+          <td class="LetraDark1">{{item.id}}</td>
+          <td class="LetraDark1">{{item.name}}</td>
+          <td><img src="{{item.pathImagen}}" style="height:5em;"></td>
+          <td class="LetraDark1">{{item.description}}</td>
+          <td class="LetraDark1">{{item.categoria.name}}</td>
+          <td class="LetraDark1">{{item.precio}}</td>
+
+
+          <td>
+            <button type="button"   class="btn btn-light  btn-sm btnDark2">
+              <i class="fas fa-pencil-alt"></i>
+            </button>
+          </td>
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,1 +1,32 @@
-<p>producto-show works!</p>
+<div class="container margen">
+  <div class="row my-4">
+    <div class="col" *ngIf="datos?.id">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-6 shadow-sm h-md-250 ">
+        <div class="col p-4 d-flex flex-column position-static"><img src="{{ datos.pathImagen }}" alt="Foto {{ datos.nombreImagen }" style="height: 40em;"
+            class="img-thumbnail rounded float-left" /></div>
+        <div class="col p-4 d-flex flex-column position-static">
+
+          <h2 class="mb-0 TituloDark2">{{ datos.name }}</h2>
+          <div class=" mb-1 text-muted">
+          <b>{{ datos.categoria.name }}
+          </b>
+        </div>
+        <p class="card-text"><b>Descripción: </b>{{ datos.description }}</p>
+
+           <h3>precuib</h3>
+        <div class="card-text">
+          <b>Tallas: </b>
+          <ul>
+            <li *ngFor="let producto of datos.talla">
+              {{producto.name}}
+            </li>
+          </ul>
+        </div>
+        <p class="card-text mb-auto">
+        
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
