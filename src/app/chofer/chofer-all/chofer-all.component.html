@@ -1,0 +1,46 @@
+<div class="row justify-content-center margen ">
+
+  <div class="col-md-8">
+    <h4 class="mb-3 TituloDark2">Lista de Choferes</h4>
+    <button type="button" class="btn btn-light btn-sm">
+      <i class="fas fa-plus"></i>
+    </button>
+    <table class="table table-hover" style="margin-top: 1em">
+      <thead>
+        <tr>
+          <th scope="col" class="TituloDark1">#</th>
+          <th scope="col" class="TituloDark1">Cedula</th>
+          <th scope="col" class="TituloDark1">Nombre</th>
+          <th scope="col" class="TituloDark1">Apellido 1</th>
+          <th scope="col" class="TituloDark1">Apellido 2</th>
+          <th scope="col" class="TituloDark1">Vehiculo</th>
+
+          <th scope="col" class="TituloDark1">Acciones</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr *ngFor="let item of datos">
+          <td class="LetraDark1">{{item.id}}</td>
+          <td class="LetraDark1">{{item.cedula}}</td>
+          <td class="LetraDark1">{{item.nombre}}</td>
+          <td class="LetraDark1">{{item.apellido1}}</td>
+          <td class="LetraDark1">{{item.apellido2}}</td>
+          <td class="LetraDark1">{{item.vehiculo.marca}} {{item.vehiculo.modelo}}   </td>
+
+
+          <td>
+            <button type="button" class="btn btn-light  btn-sm btnDark2">
+              <i class="fas fa-pencil-alt"></i>
+            </button>
+            <button type="button" class="btn btn-light  btn-sm btnDark2">
+              <i class="far fa-eye"></i>
+            </button>
+          </td>
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

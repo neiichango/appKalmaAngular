@@ -1,11 +1,20 @@
-<div class="container-fluid" margen>
+<div class="container-fluid col-md-9" margen>
   <div class="row my-2">
-    <div class="col-md-3 my-3">
-      <!-- Información de videojuegos -->
-      <div class="card border-info mb-3">
-        <img src="assets/img/ropa12.jpg" alt="Imagen" class="img-thumbnail" />
+    <div class="col-md-3 my-2" *ngFor="let item of datos">
+      <!-- Información de producto -->
+      <div class="card   mb-3" style="height: 35em;">
 
+        <img src="{{item.pathImagen}}" alt="Imagen {{item.nombreImagen}}" class="img-thumbnail mt-2 mx-2" style="height:20em;" />
+        <div class="card-body">
+
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text">{{item.description}}</p>
+          <p class="card-text">{{item.precio | currency:'CRC'}}</p>
+          <a class="btn btnDarkLight1" [routerLink]="['/producto/',item.id]" routerLinkActive="active">Ver detalle <i
+              class="fas fa-angle-double-right"></i></a>
+        </div>
       </div>
+
     </div>
   </div>
 </div>

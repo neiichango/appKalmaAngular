@@ -1,23 +1,21 @@
 <div class="row justify-content-center margen ">
-  <div class="col-md-2">
 
-  </div>
-  <div class="col-md-6">
-    <h4 class="mb-3 TituloDark2">Lista de Productos</h4>
+  <div class="col-md-8">
+    <h4 class="mb-3 TituloDark1">Lista de Productos</h4>
     <button type="button" class="btn btn-light btn-sm">
-      <i class="fas fa-plus"></i>
+      <i class="fas fa-plus LetraDark1"></i>
     </button>
     <table class="table table-hover"  style="margin-top: 1em">
-      <thead>
+      <thead class='thead'>
         <tr>
-          <th scope="col" class="TituloDark1">#</th>
-          <th scope="col" class="TituloDark1">Nombre</th>
-          <th scope="col" class="TituloDark1">Imagen</th>
-          <th scope="col" class="TituloDark1">Descripcion</th>
-          <th scope="col" class="TituloDark1">Categoria</th>
-          <th scope="col" class="TituloDark1">Precio</th>
+          <th scope="col" class="LetraDark1">#</th>
+          <th scope="col" class="LetraDark1">Nombre</th>
+          <th scope="col" class="LetraDark1">Imagen</th>
+          <th scope="col" class="LetraDark1">Descripcion</th>
+          <th scope="col" class="LetraDark1">Categoria</th>
+          <th scope="col" class="LetraDark1">Precio</th>
 
-          <th scope="col" class="TituloDark1">Acciones</th>
+          <th scope="col" class="LetraDark1">Acciones</th>
 
         </tr>
       </thead>
@@ -33,7 +31,10 @@
 
           <td>
             <button type="button"   class="btn btn-light  btn-sm btnDark2">
-              <i class="fas fa-pencil-alt"></i>
+              <i class="fas fa-pencil-alt LetraDark1 "></i>
+            </button>
+            <button type="button" class="btn btn-light  btn-sm" [routerLink]="['/producto/',item.id]">
+              <i class="far fa-eye LetraDark1"></i>
             </button>
           </td>
 

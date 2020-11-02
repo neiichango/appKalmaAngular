@@ -5,29 +5,26 @@ import { takeUntil } from 'rxjs/operators';
 import { GenericService } from 'src/app/share/generic.service';
 
 @Component({
-  selector: 'app-producto-show',
-  templateUrl: './producto-show.component.html',
-  styleUrls: ['./producto-show.component.css']
+  selector: 'app-chofer-show',
+  templateUrl: './chofer-show.component.html',
+  styleUrls: ['./chofer-show.component.css']
 })
-export class ProductoShowComponent implements OnInit {
+export class ChoferShowComponent implements OnInit {
 datos: any;
   destroy$: Subject<boolean> = new Subject<boolean>();
   constructor(
     private gService: GenericService,
     private route: ActivatedRoute) { }
 
-
-
   ngOnInit(): void {
-    // Obtener el id del videojuego
     let id = +this.route.snapshot.paramMap.get('id');
-    // Obtener el videojuego
-    this.obtenerProducto(id);
+    this.obtenerChofer(id);
   }
-  
-  obtenerProducto(id: any) {
+
+
+  obtenerChofer(id: any) {
     this.gService
-      .get('kalma/producto', id)
+      .get('kalma/chofer', id)
       .pipe(takeUntil(this.destroy$))
       .subscribe((data: any) => {
          console.log(data);
@@ -39,6 +36,5 @@ datos: any;
     // Desinscribirse
     this.destroy$.unsubscribe();
   }
-
 
 }

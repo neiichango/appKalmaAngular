@@ -1,0 +1,42 @@
+
+.btnLightDark2:hover{
+
+  background-color: #483b4d;
+
+}
+
+.btnDarkLight1{
+
+  background-color: #776e6e;
+  color: white;
+
+}
+
+.btnDarkLight1:hover{
+
+  background-color: #eee7e3;
+  color: #776e6e;
+
+}
+.TituloDark2 {
+  color: #483550;
+}
+
+.TituloDark1 {
+  color: #776e6e;
+}
+
+.LetraDark1 {
+  color: #776e6e;
+}
+
+.LetraDark2 {
+  color: #585555;
+}
+
+h5,p{
+
+  color: #776e6e;
+}
+
+

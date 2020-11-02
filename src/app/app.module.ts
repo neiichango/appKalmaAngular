@@ -12,6 +12,8 @@ import { HomeModule } from './home/home.module';
 import { UserModule } from './user/user.module';
 import { HttpErrorInterceptorService } from './share/http-error-interceptor.service';
 import { ProductoModule } from './producto/producto.module';
+import { ChoferModule } from './chofer/chofer.module';
+import { PedidoModule } from './pedido/pedido.module';
 
 
 
@@ -34,10 +36,14 @@ import { ProductoModule } from './producto/producto.module';
     HomeModule,
     UserModule,
     ProductoModule,
+    ChoferModule,
+    PedidoModule,
 // al final el gestor de las rutas principal
 
      AppRoutingModule,
 ProductoModule,
+ChoferModule,
+PedidoModule,
   ],
   providers: [
        {

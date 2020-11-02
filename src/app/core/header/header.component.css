@@ -27,9 +27,15 @@ nav > div > div> ul > li > div {
   background-color: #eee7e3;
 }
 
-.btndark2:hover{
+.btnLightDark2{
+border-color: #776e6e;
+color: #776e6e;
+
+}
+.btnLightDark2:hover{
 
   background-color: #483b4d;
+  color: white;
 }
 
 .TituloDark2 {

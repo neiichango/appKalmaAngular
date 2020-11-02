@@ -1,0 +1,27 @@
+<div class="container margen">
+  <div class="row my-4">
+    <div class="col" *ngIf="datos?.id">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-6 shadow-sm h-md-250 ">
+
+        <div class="col p-4 d-flex flex-column position-static">
+<h4 class="mb-3 TituloDark2">Información del Chofer</h4>
+          <h2 class="mb-0 TituloDark2">{{ datos.nombre }} {{ datos.apellido1 }} {{ datos.apellido2 }} </h2>
+          <div class=" mb-1 text-muted">
+          <b>{{ datos. telefono}}
+          </b>
+        </div>
+        <p class="card-text"><b>Vehiculo asignado:  </b>{{ datos.vehiculo.placa }}</p>
+
+        <h3>precuib</h3>
+        <div class="card-text">
+          <b>Tallas: </b>
+
+        </div>
+        <p class="card-text mb-auto">
+
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

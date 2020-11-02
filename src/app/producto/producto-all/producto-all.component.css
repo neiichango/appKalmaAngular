@@ -14,5 +14,26 @@
   color: #585555;
 }
 
+.letraLight1{
+  color: white;
+}
 
 
+.btnLightDark2:hover{
+
+  background-color: #483b4d;
+
+}
+.btnDarkLight1{
+
+  background-color: #776e6e;
+  color: white;
+
+}
+
+.btnDarkLight1:hover{
+
+  background-color: #eee7e3;
+  color: #776e6e;
+
+}

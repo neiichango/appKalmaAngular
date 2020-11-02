@@ -20,7 +20,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['/producto/all']"  role="button">Productos</a>
-          <a class="dropdown-item" href="#">Personal</a>
+          <a class="dropdown-item" [routerLink]="['/chofer/all']" >Personal</a>
           <a class="dropdown-item" href="#">Clientes</a>
         </div>
       </li>
@@ -32,7 +32,7 @@
           Procesos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Pedidos</a>
+          <a class="dropdown-item" [routerLink]="['/pedido/all']">Pedidos</a>
           <a class="dropdown-item" href="#">Facturacion</a>
           <a class="dropdown-item" href="#">Asignar Personal</a>
           <a class="dropdown-item" href="#">Empaquetado</a>
@@ -48,13 +48,16 @@
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
+      <span>
 
-      <button  class="btn btn-outline-dark my-2 my-sm-0 btndark2 " [routerLink]="['usuario/login']" routerLinkActive="active" >
+        <i  *ngIf="isAutenticated" class="mx-2"> {{currentUser.user.email}}</i>
+      </span>
+      <button  class="btn btn-outline-dark my-2 my-sm-0 btnLightDark2 " [routerLink]="['usuario/login']" routerLinkActive="active" *ngIf="!(isAutenticated)" >
         <a class="fa fa-user" aria-hidden="true"   ></a>
 
          Iniciar Sesion</button>
 
-      <button class="btn btn-outline-dark my-2 my-sm-0 btndark2" type="submit">
+      <button class="btn btn-outline-dark my-2 my-sm-0 btnLightDark2" type="submit" *ngIf="(isAutenticated)" (click)="logout()">
         <a class="fa fa-user" aria-hidden="true" ></a>
 
         Salir</button>
