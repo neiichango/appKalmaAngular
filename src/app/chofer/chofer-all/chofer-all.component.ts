@@ -39,5 +39,15 @@ lista() {
     this.destroy$.unsubscribe();
   }
 
+  actualizarItem(id: number) {
+    this.router.navigate(['/chofer/update', id], {
+      relativeTo: this.route,
+    });
+  }
+  crearItem() {
+    this.router.navigate(['/chofer/create'], {
+    relativeTo: this.route,
+    });
+  }
 
 }

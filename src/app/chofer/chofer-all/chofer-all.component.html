@@ -2,7 +2,7 @@
 
   <div class="col-md-8">
     <h4 class="mb-3 TituloDark2">Lista de Choferes</h4>
-    <button type="button" class="btn btn-light btn-sm">
+    <button type="button" class="btn btn-light btn-sm" (click)="crearItem()">
       <i class="fas fa-plus"></i>
     </button>
     <table class="table table-hover" style="margin-top: 1em">
@@ -18,7 +18,7 @@
           <th scope="col" class="TituloDark1">Acciones</th>
         </tr>
       </thead>
-      
+
       <tbody>
         <tr *ngFor="let item of datos">
           <td class="LetraDark1">{{item.id}}</td>
@@ -30,11 +30,11 @@
 
 
           <td>
-            <button type="button" class="btn btn-light  btn-sm btnDark2">
-              <i class="fas fa-pencil-alt"></i>
+            <button type="button" class="btn btn-light  btn-sm btnDark2" (click)="actualizarItem(item.id)">
+              <i class="fas fa-pencil-alt" ></i>
             </button>
-            <button type="button" class="btn btn-light  btn-sm btnDark2">
-              <i class="far fa-eye"></i>
+            <button type="button" class="btn btn-light  btn-sm btnDark2" [routerLink]="['/chofer/',item.id]">
+              <i class="far fa-eye" ></i>
             </button>
           </td>
 

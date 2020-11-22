@@ -14,6 +14,7 @@ import { HttpErrorInterceptorService } from './share/http-error-interceptor.serv
 import { ProductoModule } from './producto/producto.module';
 import { ChoferModule } from './chofer/chofer.module';
 import { PedidoModule } from './pedido/pedido.module';
+import { ClienteModule } from './cliente/cliente.module';
 
 
 
@@ -44,6 +45,7 @@ import { PedidoModule } from './pedido/pedido.module';
 ProductoModule,
 ChoferModule,
 PedidoModule,
+ClienteModule,
   ],
   providers: [
        {

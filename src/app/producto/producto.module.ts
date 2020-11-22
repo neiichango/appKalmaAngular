@@ -5,10 +5,12 @@ import { ProductoRoutingModule } from './producto-routing.module';
 import { ProductoIndexComponent } from './producto-index/producto-index.component';
 import { ProductoShowComponent } from './producto-show/producto-show.component';
 import { ProductoAllComponent } from './producto-all/producto-all.component';
+import { ProductoCreateComponent } from './producto-create/producto-create.component';
+import { ProductoUpdateComponent } from './producto-update/producto-update.component';
 
 
 @NgModule({
-  declarations: [ProductoIndexComponent, ProductoShowComponent, ProductoAllComponent],
+  declarations: [ProductoIndexComponent, ProductoShowComponent, ProductoAllComponent, ProductoCreateComponent, ProductoUpdateComponent],
   imports: [
     CommonModule,
     ProductoRoutingModule
