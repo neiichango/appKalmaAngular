@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { CartService } from 'src/app/share/cart.service';
 import { GenericService } from 'src/app/share/generic.service';
 import { NotificacionService } from 'src/app/share/notificacion.service';
 
@@ -13,12 +14,14 @@ import { NotificacionService } from 'src/app/share/notificacion.service';
 export class ProductoIndexComponent implements OnInit {
  datos: any;
  destroy$: Subject<boolean> = new Subject<boolean>();
+ infoVideojuego: any;
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private gService: GenericService
 
+    private notificacion: NotificacionService,
+    private route: ActivatedRoute,
+    private gService: GenericService,
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +30,7 @@ export class ProductoIndexComponent implements OnInit {
 
   lista(){
 this.gService
-      .list('kalma/producto/all')
+      .list('kalma/producto')
       .pipe(takeUntil(this.destroy$))
       .subscribe((data: any) => {
         this.datos = data;
@@ -40,6 +43,20 @@ this.gService
     this.destroy$.unsubscribe();
   }
 
-
+ agregarProducto(id: number) {
+    this.gService
+      .get('kalma/producto', id)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((data: any) => {
+        // console.log(data);
+        this.infoVideojuego = data;
+        this.cartService.addToCart(this.infoVideojuego);
+        this.notificacion.mensaje(
+          'Pedido',
+          'Producto agregado a la orden',
+          'success'
+        );
+      });
+  }
 
 }

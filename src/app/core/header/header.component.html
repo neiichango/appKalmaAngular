@@ -21,7 +21,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['/producto/all']"  role="button">Productos</a>
           <a class="dropdown-item" [routerLink]="['/chofer/all']" >Personal</a>
-          <a class="dropdown-item" href="#">Clientes</a>
+         <!-- <a class="dropdown-item" href="#">Clientes</a>-->
         </div>
       </li>
 
@@ -44,7 +44,10 @@
 <li class="nav-item active">
   <a class="nav-link" [routerLink]="['/home/acercade']" routerLinkActive="active">Acerca de.. </a>
 </li>
-
+<li class="nav-item">
+  <a class="nav-link" routerLink="/pedido" routerLinkActive="active" class="nav-link"><i
+      class="fas fa-shopping-cart"></i> <span class="badge badge-light">{{qtyItems}}</span> </a>
+</li>
 
     </ul>
     <form class="form-inline my-2 my-lg-0">

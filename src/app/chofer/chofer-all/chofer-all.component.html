@@ -1,12 +1,18 @@
 <div class="row justify-content-center margen ">
 
   <div class="col-md-8">
-    <h4 class="mb-3 TituloDark2">Lista de Choferes</h4>
+    <h4 class="mb-3 TituloDark1">Lista de Choferes</h4>
     <button type="button" class="btn btn-light btn-sm" (click)="crearItem()">
       <i class="fas fa-plus"></i>
     </button>
+    <ng-template #loading>
+      <img class="img-fluid rounded mx-auto d-block" src="/assets/img/loading.gif" alt="Cargando..."
+        style="width: 300px;" />
+    </ng-template>
     <table class="table table-hover" style="margin-top: 1em">
+
       <thead>
+
         <tr>
           <th scope="col" class="TituloDark1">#</th>
           <th scope="col" class="TituloDark1">Cedula</th>
@@ -20,6 +26,7 @@
       </thead>
 
       <tbody>
+        <ng-template [ngIf]="datos" [ngIfElse]="loading">
         <tr *ngFor="let item of datos">
           <td class="LetraDark1">{{item.id}}</td>
           <td class="LetraDark1">{{item.cedula}}</td>
@@ -30,17 +37,20 @@
 
 
           <td>
-            <button type="button" class="btn btn-light  btn-sm btnDark2" (click)="actualizarItem(item.id)">
-              <i class="fas fa-pencil-alt" ></i>
+            <button type="button" class="btn btn-light  btn-sm btnDark2 " (click)="actualizarItem(item.id)">
+              <i class="fas fa-pencil-alt LetraDark1" ></i>
             </button>
             <button type="button" class="btn btn-light  btn-sm btnDark2" [routerLink]="['/chofer/',item.id]">
-              <i class="far fa-eye" ></i>
+              <i class="far fa-eye LetraDark1" ></i>
             </button>
           </td>
 
 
         </tr>
+        </ng-template>
       </tbody>
+
     </table>
+
   </div>
 </div>

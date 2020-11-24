@@ -1,6 +1,6 @@
 <div class="container-fluid col-md-9" margen>
   <div class="row my-2">
-    <div class="col-md-3 my-2" *ngFor="let item of datos">
+        <div class="col-md-3 my-2" *ngFor="let item of datos">
       <!-- Información de producto -->
       <div class="card   mb-3" style="height: 35em;">
 
@@ -12,9 +12,11 @@
           <p class="card-text">{{item.precio | currency:'CRC'}}</p>
           <a class="btn btnDarkLight1" [routerLink]="['/producto/',item.id]" routerLinkActive="active">Ver detalle <i
               class="fas fa-angle-double-right"></i></a>
+              <button class="btn btn-light" (click)="agregarProducto(item.id)"><i class="fas fa-cart-plus"></i></button>
         </div>
       </div>
 
     </div>
+
   </div>
 </div>

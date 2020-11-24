@@ -35,7 +35,16 @@ export class ProductoAllComponent implements OnInit {
     this.destroy$.unsubscribe();
   }
 
-
-
+crearItem() {
+    this.router.navigate(['/producto/create'], {
+    relativeTo: this.route,
+    });
+  }
+  
+actualizarItem(id: number) {
+    this.router.navigate(['/producto/update', id], {
+      relativeTo: this.route,
+    });
+  }
 
 }

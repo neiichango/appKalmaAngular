@@ -7,13 +7,14 @@ import { ProductoShowComponent } from './producto-show/producto-show.component';
 import { ProductoAllComponent } from './producto-all/producto-all.component';
 import { ProductoCreateComponent } from './producto-create/producto-create.component';
 import { ProductoUpdateComponent } from './producto-update/producto-update.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ProductoIndexComponent, ProductoShowComponent, ProductoAllComponent, ProductoCreateComponent, ProductoUpdateComponent],
   imports: [
     CommonModule,
-    ProductoRoutingModule
+    ProductoRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductoModule { }

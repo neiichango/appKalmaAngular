@@ -1,6 +1,6 @@
 <div class="row justify-content-center margen">
   <div class="col-md-11">
-    <h4 class="mb-3">Crear Chofer </h4>
+    <h4 class="mb-3 offset-md-2">Crear Chofer </h4>
     <div class="container">
       <form [formGroup]="formCreate" (ngSubmit)="submitForm()" novalidate>
         <div class="row justify-content-center margen">
@@ -118,11 +118,11 @@
 
             <div class="col-md-6 mb-3">
               <div class="btn-group" role="group">
-                <button type="submit" class="btn btn-success">Guardar</button>
+                <button type="submit" class="btn btnDarkLight1">Guardar</button>
                 <button type="reset" class="btn btn-secondary" (click)="onReset()">
                   Cancelar
                 </button>
-                <button type="button" class="btn btn-info" (click)="onBack()">
+                <button type="button" class="btn btn-light btnLightDark2" (click)="onBack()">
                   Regresar
                 </button>
               </div>

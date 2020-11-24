@@ -42,8 +42,8 @@ export class ChoferUpdateComponent implements OnInit {
 getChofer(id: number) {
     this.gService.get('kalma/chofer', id).subscribe((respuesta: any) => {
       this.chofer = respuesta;
-      //Obtenida la información del videojuego
-      //se construye el formulario
+      // Obtenida la información del videojuego
+      // se construye el formulario
       this.reactiveForm();
     });
   }
@@ -54,7 +54,7 @@ getChofer(id: number) {
 
     this.getVehiculos();
 
-    //Si hay información del videojuego
+    // Si hay información del videojuego
     if (this.chofer) {
 
 

@@ -42,10 +42,10 @@ import { ClienteModule } from './cliente/cliente.module';
 // al final el gestor de las rutas principal
 
      AppRoutingModule,
-ProductoModule,
+/*ProductoModule,*/
 ChoferModule,
 PedidoModule,
-ClienteModule,
+ClienteModule
   ],
   providers: [
        {
