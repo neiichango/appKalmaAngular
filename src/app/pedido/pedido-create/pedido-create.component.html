@@ -7,7 +7,7 @@
       <div class="col">
         <p class="card-text">Fecha: {{fecha | date:'dd/MM/yyyy'}}</p>
       </div>
-<form [formGroup]="formCreate" (ngSubmit)="submitForm()" novalidate>
+<form [formGroup]="formCreate"  novalidate>
       <div class="form-group row" style="margin: 1rem auto;">
         <label for="cliente_id" class="col-md-4 offset-md-1 col-form-label card-text">Cliente</label>
         <select class="form-control col-md-4" formControlName="cliente_id">
@@ -21,11 +21,51 @@
           </small>
         </div>
       </div>
-</form>
+
+
+<div class="form-group row" >
+  <div class="col-sm-8">
+    <label for="express" class="col-md-5 offset-md-1 col-form-label card-text">¿Desea enviar el pedido a la tienda?  </label>
+    <div class="form-check form-check-inline  offset-md-2">
+      <input class="form-check-input" checked type="radio" name="express"
+       formControlName="express" [value]="true"
+        (change)="onCheckChange($event)">
+      <label class="form-check-label LetraDark1" for="si">Si</label>
     </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="express"  [value]="false" formControlName="express"
+        (change)="onCheckChange( $event)">
+      <label class="form-check-label" for="no">No</label>
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label for="provincia_id" class="col-md-4 offset-md-1 col-form-label card-text">Provincia</label>
+  <select class="form-control  col-md-4" formControlName="provincia_id" (change)="onCheckboxChange( $event)">
+    <option *ngFor="let provincia of provincias" [value]="provincia.id">
+      {{provincia.name}}
+    </option>
+  </select>
+</div>
+
+
+<div class="form-group row">
+  <label class="col-md-4  offset-md-1 col-form-label card-text" for="direccion">Direccion Exacta </label>
+  <div class="col-md-5 ">
+   <!-- <input type="text" class="formControl" formControlName="description" name="description" /> -->
+    <textarea class="form-control  col-md-12" formControlName="direccion" [value]="direccion"  rows="2"></textarea>
+  </div>
+
+
+    </div>
+
+      </form>
+  </div>
 
 
   </div>
+
 
   <div class=" row card">
     <div class="card-header">Detalle del Pedido</div>
@@ -54,13 +94,15 @@
 
           <tr class="group" style="cursor: pointer" *ngFor="let item of items; let i = index">
             <td>
-              <p>{{ item.product.name}}</p>
+              <p>{{ item.producto.name}}</p>
 
 
             </td>
+
             <td class="right">
               <p>${{item.precio}}</p>
             </td>
+
             <td class="center">
               <input id="cantidad " type="number" class="form-control mb-2" [(ngModel)]="item.cantidad"
                 (change)=" actualizarCantidad(item)">
@@ -82,6 +124,47 @@
             <tbody>
               <tr>
                 <td class="left">
+                  <strong>SubTotal</strong>
+                </td>
+                <td class="right">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">$</div>
+                    </div>
+                    <input readonly type="text" class="form-control" id="subtotal" type="text" [value]="subtotal">
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="left">
+                  <strong>Impuesto</strong>
+                </td>
+                <td class="right">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">$</div>
+                    </div>
+                    <input readonly type="text" class="form-control" id="gastoimpuesto" type="text" [value]="gastoimpuesto">
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="left">
+                  <strong>Envio</strong>
+                </td>
+                <td class="right">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">$</div>
+                    </div>
+                    <input readonly type="text" class="form-control"  id="gastoenvio" type="text" [value]="gastoenvio"  >
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="left">
                   <strong>Total</strong>
                 </td>
                 <td class="right">
@@ -93,6 +176,7 @@
                   </div>
                 </td>
               </tr>
+
             </tbody>
           </table>
           <div class="col">

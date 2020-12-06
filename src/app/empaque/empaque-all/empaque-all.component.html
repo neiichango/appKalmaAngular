@@ -1,0 +1,62 @@
+<div class="row justify-content-center margen ">
+
+  <div class="col-md-8">
+    <h4 class="mb-3 TituloDark2">Control de Empaque</h4>
+
+
+    <ng-template #loading>
+      <img class="img-fluid rounded mx-auto d-block" src="/assets/img/loading.gif" alt="Cargando..."
+        style="width: 300px;" />
+    </ng-template>
+
+    <table class="table table-hover" style="margin-top: 1em">
+      <thead>
+        <tr>
+          <th scope="col" class="TituloDark1">#</th>
+          <th scope="col" class="TituloDark1">Cliente</th>
+          <th scope="col" class="TituloDark1">Fecha Pedido</th>
+          <th scope="col" class="TituloDark1">Estado</th>
+          <th scope="col" class="TituloDark1">Express</th>
+        <!--  <th scope="col" class="TituloDark1">Envio</th>
+          <th scope="col" class="TituloDark1">Subtotal</th>
+          <th scope="col" class="TituloDark1">Impuesto</th> -->
+          <th scope="col" class="TituloDark1">Total</th>
+
+          <th scope="col" class="TituloDark1">Acciones</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <ng-template [ngIf]="datos" [ngIfElse]="loading">
+        <tr *ngFor="let item of datos">
+          <td class="LetraDark1">{{item.id}}</td>
+          <td class="LetraDark1">{{item.cliente.name}}</td>
+          <td class="LetraDark1">{{item.created_at | date:"MM/dd/yyyy" }}</td>
+          <td class="LetraDark1">{{item.estadopedido.name}}</td>
+          <td class="LetraDark1">{{item.express?'Si':'No'}}</td>
+        <!--  <td class="LetraDark1">{{item.gastoenvio}}</td>
+          <td class="LetraDark1">{{item.subtotal}}</td>
+          <td class="LetraDark1">{{item.gastoimpuesto}}</td> -->
+          <td class="LetraDark1">{{item.total}}</td>
+          <td>
+            <button type="button" class="btn btn-light  btn-sm" [routerLink]="['/empaque/',item.id]">
+              <i class="far fa-eye LetraDark1"></i>
+            </button>
+
+            <button type="button" class="btn btn-light  btn-sm btnDark2" *ngIf="item.estadopedido.id==2" data-toggle="tooltip" data-placement="top" title="Empaque completo,Listo para facturar" (click)="listo(item.id)" >
+              <i class="fas fas fa-check" ></i>
+            </button>
+
+            <button type="button" class="btn btn-light  btn-sm btnDark2" *ngIf="item.estadopedido.id==1" data-toggle="tooltip"
+              data-placement="top" title="Iniciar proceso de empaque" (click)="proceso(item.id)">
+              <i class="fas fas fa-spinner"> </i>
+            </button>
+
+          </td>
+
+        </tr>
+        </ng-template>
+      </tbody>
+    </table>
+  </div>
+</div>

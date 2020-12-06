@@ -2,9 +2,14 @@
 
   <div class="col-md-8">
     <h4 class="mb-3 TituloDark2">Lista de Pedidos</h4>
-    <button type="button" class="btn btn-light btn-sm">
+    <button type="button" class="btn btn-light btn-sm" (click)="crearItem()">
       <i class="fas fa-plus"></i>
     </button>
+
+      <ng-template #loading>
+        <img class="img-fluid rounded mx-auto d-block" src="/assets/img/loading.gif" alt="Cargando..."
+          style="width: 300px;" />
+      </ng-template>
     <table class="table table-hover" style="margin-top: 1em">
       <thead>
         <tr>
@@ -18,11 +23,12 @@
           <th scope="col" class="TituloDark1">Impuesto</th>
           <th scope="col" class="TituloDark1">Total</th>
 
-          <th scope="col" class="TituloDark1">Acciones</th>
+
 
         </tr>
       </thead>
       <tbody>
+          <ng-template [ngIf]="datos" [ngIfElse]="loading">
         <tr *ngFor="let item of datos">
           <td class="LetraDark1">{{item.id}}</td>
           <td class="LetraDark1">{{item.cliente.name}}</td>
@@ -33,14 +39,10 @@
           <td class="LetraDark1">{{item.subtotal}}</td>
           <td class="LetraDark1">{{item.gastoimpuesto}}</td>
           <td class="LetraDark1">{{item.total}}</td>
-                  <td>
-            <button type="button" class="btn btn-light  btn-sm btnDark2">
-              <i class="fas fa-pencil-alt"></i>
-            </button>
-          </td>
-
+               
 
         </tr>
+        </ng-template>
       </tbody>
     </table>
   </div>

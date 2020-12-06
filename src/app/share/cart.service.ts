@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 export class ItemCart {
-  idItem: number;
-  product: any;
+  productoId: number;
+  producto: any;
   cantidad: number;
   precio: number;
   subtotal: number;
@@ -22,29 +22,29 @@ export class CartService {
     // Establecer un observable
     this.currentDataCart$ = this.cart.asObservable();
   }
-  addToCart(producto: any) {
+  addToCart(producto1: any) {
     const newItem = new ItemCart();
-    // Armar instancia de ItemCart con los valores respectivos del producto
-    newItem.idItem = producto.id | producto.idItem;
-    newItem.precio = producto.precio;
+    // Armar instancia de ItemCart con los valores respectivos del producto1
+    newItem.productoId = producto1.id | producto1.productoId;
+    newItem.precio = producto1.precio;
     newItem.cantidad = 1;
     newItem.subtotal = this.calculoSubtotal(newItem);
-    newItem.product = producto;
+    newItem.producto = producto1;
     // Obtenemos el valor actual
     let listCart = this.cart.getValue();
     // Si no es el primer item del carrito
     if (listCart) {
       // Buscamos si ya cargamos ese item en el carrito
-      let objIndex = listCart.findIndex((obj) => obj.idItem == newItem.idItem);
+      let objIndex = listCart.findIndex((obj) => obj.productoId == newItem.productoId);
       // Si ya cargamos uno aumentamos su cantidad
       if (objIndex != -1) {
-        if (producto.hasOwnProperty('cantidad')) {
+        if (producto1.hasOwnProperty('cantidad')) {
           // Actualizar cantidad
-          if (producto.cantidad <= 0) {
+          if (producto1.cantidad <= 0) {
             this.removeFromCart(newItem);
             return;
           } else {
-            listCart[objIndex].cantidad = producto.cantidad;
+            listCart[objIndex].cantidad = producto1.cantidad;
           }
         } else {
           // Agregar  un item
@@ -74,7 +74,7 @@ export class CartService {
     // Obtenemos el valor actual de carrito
     let listCart = this.cart.getValue();
     // Buscamos el item del carrito para eliminar
-    let objIndex = listCart.findIndex((obj) => obj.idItem == newData.idItem);
+    let objIndex = listCart.findIndex((obj) => obj.productoId == newData.productoId);
     if (objIndex != -1) {
       // Eliminamos el item del array del carrito
       listCart.splice(objIndex, 1);

@@ -14,7 +14,7 @@ import { NotificacionService } from 'src/app/share/notificacion.service';
 export class ProductoIndexComponent implements OnInit {
  datos: any;
  destroy$: Subject<boolean> = new Subject<boolean>();
- infoVideojuego: any;
+ infoproducto: any;
 
   constructor(
 
@@ -49,8 +49,8 @@ this.gService
       .pipe(takeUntil(this.destroy$))
       .subscribe((data: any) => {
         // console.log(data);
-        this.infoVideojuego = data;
-        this.cartService.addToCart(this.infoVideojuego);
+        this.infoproducto = data;
+        this.cartService.addToCart(this.infoproducto);
         this.notificacion.mensaje(
           'Pedido',
           'Producto agregado a la orden',

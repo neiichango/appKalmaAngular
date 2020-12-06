@@ -1,0 +1,100 @@
+<div class="container margen">
+  <div class="row my-4">
+    <div class="col" *ngIf="datos?.id">
+      <ng-template #loading>
+        <img class="img-fluid rounded mx-auto d-block" src="/assets/img/loading.gif" alt="Cargando..."
+          style="width: 300px;" />
+      </ng-template>
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-6 shadow-sm h-md-250 ">
+
+        <div class="col p-4 d-flex  flex-column position-static" style="padding: 1em">
+
+          <h4 class="mb-0 TituloDark2"> Numero de Pedido: {{ datos.id }} </h4>
+          <div class=" mb-1 text-muted">
+            <b> Cliente: {{ datos.cliente.name }}
+            </b>
+          </div>
+
+          <div class="" style="padding: 1em"></div>
+          <p class="card-text"><b>Fecha Pedido: </b>{{ datos.created_at | date:"MM/dd/yyyy" }}</p>
+          <p class="card-text"><b>Express: </b>{{ datos.express?'Si':'No' }}</p>
+          <p class="card-text"><b>Estado: </b>{{ datos.estadopedido.name }}</p>
+
+          <p class="card-text" *ngIf="datos.express==1"><b>Provincia: </b>{{ datos.provincia.name}}</p>
+          <p class="card-text" *ngIf="datos.express==1"><b>Direccion: </b>{{ datos.direccion }}</p>
+        </div>
+        <table class="table table-hover" style="margin-top: 1em">
+          <thead class='thead'>
+            <tr>
+              <th scope="col" class="LetraDark1">Cantidad</th>
+              <th scope="col" class="LetraDark1">Nombre</th>
+              <th scope="col" class="LetraDark1">Imagen</th>
+              <th scope="col" class="LetraDark1">Descripcion</th>
+
+              <th scope="col" class="LetraDark1">Precio</th>
+
+
+              <th scope="col" class="LetraDark1">SubTotal</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <ng-template [ngIf]="datos" [ngIfElse]="loading">
+              <tr *ngFor="let item of datos.producto">
+                <td class="LetraDark1">{{item.pivot.cantidad}}</td>
+                <td class="LetraDark1">{{item.name}}</td>
+                <td><img src="{{item.pathImagen}}" style="height:5em;"></td>
+                <td class="LetraDark1">{{item.description}}</td>
+                <td class="LetraDark1">{{item.precio}}</td>
+
+                <td class="LetraDark1">{{item.pivot.subtotal}}</td>
+
+
+
+
+                <!--
+                <td>
+                  <button type="button" class="btn btn-light  btn-sm btnDark2" (click)="actualizarItem(item.id)">
+                    <i class="fas fa-pencil-alt LetraDark1 "></i>
+                  </button>
+                  <button type="button" class="btn btn-light  btn-sm" [routerLink]="['/producto/',item.id]">
+                    <i class="far fa-eye LetraDark1"></i>
+                  </button>
+                </td>
+-->
+
+              </tr>
+            </ng-template>
+          </tbody>
+        </table>
+
+        <div class="col p-2 d-flex align-items-end flex-column position-right">
+
+
+          <p class="card-text"><b>Subtotal: </b>{{ datos.subtotal}}</p>
+          <p class="card-text"><b>Impuesto: </b>{{ datos.gastoimpuesto}}</p>
+          <p class="card-text"><b>Envio: </b>{{ datos.gastoenvio}}</p>
+          <p class="card-text"><b>Total: </b>{{ datos.total}}</p>
+
+
+          <!---
+        <div class="card-text">
+          <b>Tallas: </b>
+          <ul>
+            <li *ngFor="let producto of datos.talla">
+              {{producto.name}}
+            </li>
+          </ul>
+          <b>Color: </b>
+          <p>{{datos.color.name}}</p>
+        </div>
+        <p class="card-text mb-auto">
+
+        </p>-->
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

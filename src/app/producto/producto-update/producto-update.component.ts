@@ -75,7 +75,6 @@ getProducto(id: number) {
       precio: [this.producto.precio, [Validators.required]],
       color_id: [this.producto.color_id, [Validators.required]],
       categoria_id: [this.producto.categoria_id, [Validators.required]],
-
       tallas: this.fb.array([]),
       talla_id: this.fb.array([]),
       image: [''],
@@ -169,7 +168,7 @@ getProducto(id: number) {
       });
     }
   }
-  // Obtener la imagen o archivo seleccionado
+ //Obtener la imagen o archivo seleccionado
   onFileSelect(event) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];

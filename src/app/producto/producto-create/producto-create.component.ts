@@ -41,7 +41,7 @@ error: any;
       precio: ['', [Validators.required, Validators.pattern('[0-9]+')]],
       color_id: ['', [Validators.required]],
       categoria_id: ['', [Validators.required]],
-      
+
       tallas: this.fb.array([]),
       talla_id: this.fb.array([]),
       image: [''],

@@ -37,12 +37,12 @@ export class PedidoAllComponent implements OnInit {
     this.destroy$.unsubscribe();
   }
 
-/*
+
  crearItem() {
     this.router.navigate(['/pedido'], {
     relativeTo: this.route,
     });
-  }*/
+  }
 
 
 /*  module.filter('yesNo', function() {

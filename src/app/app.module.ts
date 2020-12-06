@@ -15,6 +15,10 @@ import { ProductoModule } from './producto/producto.module';
 import { ChoferModule } from './chofer/chofer.module';
 import { PedidoModule } from './pedido/pedido.module';
 import { ClienteModule } from './cliente/cliente.module';
+import { EmpaqueModule } from './empaque/empaque.module';
+import { FacturaModule } from './factura/factura.module';
+import { PersonalModule } from './personal/personal.module';
+import { EnvioModule } from './envio/envio.module';
 
 
 
@@ -39,13 +43,18 @@ import { ClienteModule } from './cliente/cliente.module';
     ProductoModule,
     ChoferModule,
     PedidoModule,
+    EmpaqueModule,
+FacturaModule,
+PersonalModule,
+EnvioModule,
 // al final el gestor de las rutas principal
 
      AppRoutingModule,
 /*ProductoModule,*/
 ChoferModule,
 PedidoModule,
-ClienteModule
+ClienteModule,
+
   ],
   providers: [
        {
